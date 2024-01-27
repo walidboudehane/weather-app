@@ -7,7 +7,6 @@ from django.conf import settings
 
 def weather_view(request):
     api_key = settings.API_KEY
-    print(api_key)
     if request.method == 'POST':
         form = WeatherForm(request.POST)
         if form.is_valid():
