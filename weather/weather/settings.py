@@ -11,11 +11,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
-from dotenv import load_dotenv
-import os
+from decouple import config
 
-load_dotenv()  # take environment variables from .env.
-API_KEY = os.getenv('OPENWEATHERMAP_API_KEY')
+API_KEY = config('API_KEY')
+
 
 
 
@@ -45,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'weather_app',
-    'dotenv',
+    'decouple',
 ]
 
 MIDDLEWARE = [
